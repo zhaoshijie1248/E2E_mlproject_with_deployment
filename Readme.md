@@ -1,15 +1,21 @@
-# End-to-End Machine Learning Project with Deployment #
+# Deploying ML models as web service to cloud #
 ## Tech Stack: Python, Flask, Docker, AWS ECR/EC2, CI/CD
+Serving a machine learning model as a web service using [flask](http://flask.pocoo.org/) and [docker](https://www.docker.com/).
 
 ## Objective
+Be acquainted with development workflow, and related tech stack, and get the first taste of building an ML production system.
 
-In the rapidly evolving landscape of technology, state-of-the-art machine learning models continue to emerge incessantly. For a data scientist, the ability to craft models that align with practical business needs is indispensable. However, the process doesn't stop there; deploying these models effectively is of equal significance. 
-
-This project is meticulously crafted to provide hands-on experience across the complete lifecycle of a machine learning endeavor. From the initial stages of data ingestion and exploratory data analysis to the intricacies of model training, prediction, and development, the journey also encompasses crucial aspects like logging, exception handling, and thoughtful project structure design.
-
-## Problem statement
-- This project understands how the student's performance (test scores) is affected by other variables such as Gender, Ethnicity, Parental level of education, Lunch and Test preparation course.
-
+## Training a machine learning model on a local system
+1. [./notebook/EDA STUDENT PERFORMANCE.ipynb](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/notebook/1%20.%20EDA%20STUDENT%20PERFORMANCE%20.ipynb): exploratory data analysis and visualization
+2. [./src/components/data_ingestion.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_ingestion.py): read data and split them into train set and test set
+3. [./src/components/data_transformation.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_transformation.py): standard scale on numerical features and do one-hot encoding on categorial features
+4. [./src/components/model_trainer.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/model_trainer.py): apply classification algorithms, including Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoosting Regressor, AdaBoost Regressor, to train data and select the model with the best performance to save as ['model.pkl'](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/artifacts/model.pkl) in 
+    ```
+        curl -X POST \
+        0.0.0.0:80/predict \
+        -H 'Content-Type: application/json' \
+        -d '[5.9,3.0,5.1,1.8]'
+    ```
 
 ## Data Collection
 - Dataset Source - https://www.kaggle.com/datasets/spscientist/students-performance-in-exams?datasetId=74977
