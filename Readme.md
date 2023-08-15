@@ -1,7 +1,7 @@
 # Deploying ML models as web service to cloud #
-Tech Stack: Python, Flask, Docker, AWS ECR/EC2, CI/CD
 
-Serving a machine learning model as a web service using [flask](http://flask.pocoo.org/) and [docker](https://www.docker.com/).
+Serving a machine learning model as a web service using Python, Flask, Docker, AWS ECR/EC2, CI/CD
+
 
 ## Objective
 Be acquainted with development workflow, and related tech stack, and get the first taste of building an ML production system.
