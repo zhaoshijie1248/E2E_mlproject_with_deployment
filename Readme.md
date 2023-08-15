@@ -11,9 +11,42 @@ Be acquainted with development workflow, and related tech stack, and get the fir
 ## Training a machine learning model on a local system
 1. [EDA.ipynb](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/notebook/1%20.%20EDA%20STUDENT%20PERFORMANCE%20.ipynb): exploratory data analysis and visualization
 2. [data_ingestion.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_ingestion.py): read data and split them into train set and test set
-3. [data_transformation.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_transformation.py): standard scale on numerical features and do one-hot encoding on categorial features
-4. [model_trainer.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/model_trainer.py): apply classification algorithms, including Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoosting Regressor, AdaBoost Regressor, to train data and select the model with the best performance to save as ['model.pkl'](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/artifacts/model.pkl) in 
-    ```
+```
+class DataIngestion:
+    def __init__(self):
+        self.ingestion_config=DataIngestionConfig()
+
+    def initiate_data_ingestion(self):
+        logging.info("Entered the data ingestion method or component")
+        try:
+            df=pd.read_csv('notebook\data\stud.csv')
+            logging.info('Read the dataset as dataframe')
+
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
+
+            df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
+
+            logging.info("Train test split initiated")
+            train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
+
+            train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
+
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
+
+            logging.info("Inmgestion of the data iss completed")
+
+            return(
+                self.ingestion_config.train_data_path,
+                self.ingestion_config.test_data_path
+
+            )
+        except Exception as e:
+            raise CustomException(e,sys)
+```        
+4. [data_transformation.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_transformation.py): standard scale on numerical features and do one-hot encoding on categorial features
+5. [model_trainer.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/model_trainer.py): apply classification algorithms, including Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoosting Regressor, AdaBoost Regressor, to train data and select the model with the best performance to save as ['model.pkl'](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/artifacts/model.pkl)
+   
+```
 class ModelTrainer:
     def __init__(self):
         self.model_trainer_config=ModelTrainerConfig()
@@ -100,7 +133,7 @@ class ModelTrainer:
            
         except Exception as e:
             raise CustomException(e,sys)
-    ```
+ ```
 
 ## Data Collection
 - Dataset Source - https://www.kaggle.com/datasets/spscientist/students-performance-in-exams?datasetId=74977
