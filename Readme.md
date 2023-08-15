@@ -11,11 +11,12 @@ Be acquainted with development workflow, and related tech stack, and get the fir
 ## Training a machine learning model on a local system
 1. [EDA.ipynb](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/notebook/1%20.%20EDA%20STUDENT%20PERFORMANCE%20.ipynb): exploratory data analysis and visualization
 2. [data_ingestion.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_ingestion.py): read data and split them into train set and test set
-   
+
 <details>
   <summary>Click me</summary>
-  
-```
+
+  ### Code
+  ```
 class DataIngestion:
     def __init__(self):
         self.ingestion_config=DataIngestionConfig()
@@ -43,8 +44,14 @@ class DataIngestion:
 
         except Exception as e:
             raise CustomException(e,sys)
-```
+
+  ```
 </details>
+
+
+
+
+
 
 3. [data_transformation.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_transformation.py): standard scale on numerical features and do one-hot encoding on categorial features
 
