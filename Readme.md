@@ -261,34 +261,8 @@ class ModelTrainer:
 
 </details>
 
-## Data Collection
-- Dataset Source - https://www.kaggle.com/datasets/spscientist/students-performance-in-exams?datasetId=74977
-- The data consists of 8 column and 1000 rows.
+## Wrapping the inference logic into a flask web service
 
-## Data Exploration
-
-- Check Missing values
-- Check Duplicates
-- Check data type
-- Check the number of unique values of each column
-- Check statistics of data set
-- Check various categories present in the different categorical column
-
-## Data Visualization
-  
-- **Model Development**: It will delve into the process of creating and fine-tuning machine learning models using Python. Various libraries and frameworks will be explored to achieve this.
-
-- **Deployment**: This project emphasizes the deployment phase, where the focus will be on using Flask to create a web service for the trained model. Docker will be employed to containerize the application, ensuring consistent deployment across environments.
-
-- **Cloud Integration**: The project will guide you through utilizing AWS ECR/EC2 for hosting the Dockerized application, allowing for efficient scaling and management.
-
-- **Continuous Integration and Continuous Deployment (CI/CD)**: You will learn how to set up CI/CD pipelines to automate the testing, building, and deployment processes. This ensures that changes to the codebase can be seamlessly integrated and deployed, reducing manual intervention.
-
-## Getting Started
-
-Follow these steps to get started with the project:
-
-1. Clone this repository to your local machine.
-2. Install the required dependencies listed in the `requirements.txt` file.
-3. Prepare your dataset or use a sample dataset to experiment with the model development process.
-4. Refer to the documentation provided for each phase of the project to understand the workflow.
+credit to:
+https://towardsdatascience.com/simple-way-to-deploy-machine-learning-models-to-cloud-fd58b771fdcf
+https://github.com/tanujjain/deploy-ml-model/blob/master/README.md
