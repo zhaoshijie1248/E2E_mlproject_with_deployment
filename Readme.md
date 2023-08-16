@@ -53,7 +53,10 @@ Be acquainted with development workflow, and related tech stack, and get the fir
 
 
 3. [data_transformation.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/data_transformation.py): standard scale on numerical features and do one-hot encoding on categorial features
+<details>
+  <summary>Code</summary>
 
+ 
 ```
 class DataTransformation:
     def __init__(self):
@@ -161,8 +164,12 @@ class DataTransformation:
             raise CustomException(e,sys)
 ```
 
+</details>
+
 4. [model_trainer.py](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/src/components/model_trainer.py): apply classification algorithms, including Random Forest, Decision Tree, Gradient Boosting, Linear Regression, XGBRegressor, CatBoosting Regressor, AdaBoost Regressor, to train data and select the model with the best performance to save as ['model.pkl'](https://github.com/zhaoshijie1248/E2E_mlproject_with_deployment/blob/main/artifacts/model.pkl)
-   
+<details>
+  <summary>Code</summary>
+
 ```
 class ModelTrainer:
     def __init__(self):
@@ -251,6 +258,8 @@ class ModelTrainer:
         except Exception as e:
             raise CustomException(e,sys)
  ```
+
+</details>
 
 ## Data Collection
 - Dataset Source - https://www.kaggle.com/datasets/spscientist/students-performance-in-exams?datasetId=74977
