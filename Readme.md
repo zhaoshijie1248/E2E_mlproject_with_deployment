@@ -120,7 +120,14 @@ f. manage configuration data by create repository secrets like AWS_ACCESS_KEY_ID
 
 g. check CI/CD workflow run correctly or not by commiting tiny changes in application.py file. it shows every update pushed to github repo will trigger auromatically integrate and deployment.
 
-<img src="img/cicd.png" alt="image" height="300" width="780"/>
+<img src="img/CICD.png" alt="image" height="300" width="780"/>
+
+<img src="img/CICD1.png" alt="image" height="300" width="780"/>
+
+<img src="img/CICD2.png" alt="image" height="300" width="780"/>
+
+<img src="img/CICD3.png" alt="image" height="300" width="780"/>
+
 
 Finally, we can successfully access student performance prediction web app running on AWS EC2 instance with continous 
 integrtation and deployment.
